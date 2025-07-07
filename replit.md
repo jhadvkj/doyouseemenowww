@@ -96,6 +96,7 @@ The application follows a monorepo structure with clear separation between clien
 ## Changelog
 
 - July 07, 2025. Initial setup
+- July 07, 2025. Updated to ultra-minimalist design with floating red handwritten background, frameless photo gallery, and deployment-ready configuration
 
 ## User Preferences
 
