@@ -1,35 +1,27 @@
 import { photos, type Photo, type InsertPhoto } from "@shared/schema";
+import { db } from "./db";
+import { desc } from "drizzle-orm";
 
 export interface IStorage {
   createPhoto(photo: InsertPhoto): Promise<Photo>;
   getAllPhotos(): Promise<Photo[]>;
 }
 
-export class MemStorage implements IStorage {
-  private photos: Map<number, Photo>;
-  private currentId: number;
-
-  constructor() {
-    this.photos = new Map();
-    this.currentId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async createPhoto(insertPhoto: InsertPhoto): Promise<Photo> {
-    const id = this.currentId++;
-    const photo: Photo = {
-      ...insertPhoto,
-      id,
-      uploadedAt: new Date(),
-    };
-    this.photos.set(id, photo);
+    const [photo] = await db
+      .insert(photos)
+      .values(insertPhoto)
+      .returning();
     return photo;
   }
 
   async getAllPhotos(): Promise<Photo[]> {
-    return Array.from(this.photos.values()).sort(
-      (a, b) => b.uploadedAt.getTime() - a.uploadedAt.getTime()
-    );
+    return await db
+      .select()
+      .from(photos)
+      .orderBy(desc(photos.uploadedAt));
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
