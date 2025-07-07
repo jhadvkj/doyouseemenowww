@@ -80,11 +80,11 @@ export default function Home() {
         <img 
           src={doYouSeeMe} 
           alt="Do You See Me handwritten text" 
-          className="w-64 h-auto opacity-100" 
+          className="w-96 h-auto opacity-100" 
         />
       </div>
 
-      <div className="container mx-auto px-4 py-12 max-w-4xl relative z-10">
+      <div className="container mx-auto px-4 pt-24 pb-12 max-w-4xl relative z-10">
         <main className="text-center space-y-12">
           {/* Header Text */}
           <section className="space-y-6">

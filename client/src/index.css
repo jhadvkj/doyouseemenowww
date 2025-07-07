@@ -62,16 +62,16 @@
 /* Floating Background Animation */
 @keyframes float {
   0%, 100% { 
-    transform: translate(-50%, -50%) translateY(0px); 
+    transform: translate(-50%, 0) translateY(0px); 
   }
   50% { 
-    transform: translate(-50%, -50%) translateY(-15px); 
+    transform: translate(-50%, 0) translateY(-15px); 
   }
 }
 
 .floating-bg {
   position: fixed;
-  top: 50%;
+  top: 25%;
   left: 50%;
   z-index: 0;
   opacity: 1;
