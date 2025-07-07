@@ -71,7 +71,7 @@
 
 .floating-bg {
   position: fixed;
-  top: 25%;
+  top: 10%;
   left: 50%;
   z-index: 0;
   opacity: 1;

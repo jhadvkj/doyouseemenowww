@@ -80,7 +80,7 @@ export default function Home() {
         <img 
           src={doYouSeeMe} 
           alt="Do You See Me handwritten text" 
-          className="w-[600px] h-auto opacity-100" 
+          className="w-[500px] h-auto opacity-100" 
         />
       </div>
 
