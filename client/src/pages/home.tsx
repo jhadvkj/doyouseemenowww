@@ -3,7 +3,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import type { Photo } from "@shared/schema";
-import doYouSeeMe from "@assets/do u_1751897946803.jpg";
+import doYouSeeMe from "@assets/do u_1751898655452.jpg";
 
 export default function Home() {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -84,7 +84,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="container mx-auto px-4 py-12 max-w-4xl relative z-10">
         <main className="text-center space-y-12">
           {/* Header Text */}
           <section className="space-y-6">
