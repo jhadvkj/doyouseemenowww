@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: photography-collection
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+  - type: pserv
+    name: photography-db
+    env: docker
+    plan: free
