@@ -7,7 +7,3 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-  - type: pserv
-    name: photography-db
-    env: docker
-    plan: free
